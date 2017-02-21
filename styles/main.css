@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.slideshow {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    margin: auto
+}
+
+.slideshow img {
+    position: absolute;
+    display: none;
+}
+
+.slideshow img.active {
+
+    display: block;
+
+}
