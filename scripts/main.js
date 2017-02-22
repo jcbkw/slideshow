@@ -1,6 +1,4 @@
-var tick = 1000,
-    i = 0,
-    slideShowIndex = 0;
+var tick = 1000;
 
 function slideShowStarter () {
 
@@ -12,9 +10,9 @@ setInterval( function (){
    var current =  document.getElementById("slideShow").getElementsByClassName('active')[0];
    current.classList.remove('active');
 
-   if (current.nextElementSibling) { 
+   if (current.parentElement.nextElementSibling) { 
 
-     current.nextElementSibling.classList.add('active');
+     current.parentElement.nextElementSibling.getElementsByTagName("img")[0].classList.add('active');
    
     }
     else {
