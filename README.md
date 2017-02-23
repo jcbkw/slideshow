@@ -2,7 +2,6 @@
 
 ## todo
 
- - slide description
  - optional clickable slides
  - optional slide description
  - slide transition
@@ -12,8 +11,9 @@
 
 ## doing
 
- - clickable slides
+ - slide description
 
 ## done
 
+ - clickable slides
  - slide show base

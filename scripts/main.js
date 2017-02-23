@@ -2,24 +2,24 @@ var tick = 1000;
 
 function slideShowStarter () {
 
-    document.getElementById("slideShow").getElementsByTagName('img')[0].classList.add('active');
+    document.getElementById("slideShow").getElementsByClassName('img-wrapper')[0].classList.add('active');
 
 }
 setInterval( function (){
 
-   var current =  document.getElementById("slideShow").getElementsByClassName('active')[0];
+   var current = document.getElementById("slideShow").getElementsByClassName('active')[0];
    current.classList.remove('active');
 
-   if (current.parentElement.nextElementSibling) { 
+   if (current.nextElementSibling) { 
 
-     current.parentElement.nextElementSibling.getElementsByTagName("img")[0].classList.add('active');
+     current.nextElementSibling.classList.add('active');
    
-    }
-    else {
+   }
+   else {
 
        slideShowStarter(); 
 
-    }
+   }
 
 }, tick);
 
