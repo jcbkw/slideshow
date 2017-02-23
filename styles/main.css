@@ -5,8 +5,8 @@ body {
 
 .slideshow {
     position: relative;
-    width: 800px;
-    height: 400px;
+    width: 768px;
+    height: 320px;
     margin: auto
 }
 
@@ -27,5 +27,17 @@ body {
 .slideshow-link {
 
     text-decoration: none;
+
+}
+
+.slideshow .img-wrapper p {
+
+    position: relative;
+    top: -60px;
+    color: white;
+    background-color: rgba(100, 100, 100,.2);
+    padding: 19px 0 19px 5px;
+    width: auto;
+    margin: 0;
 
 }

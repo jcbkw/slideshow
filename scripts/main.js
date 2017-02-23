@@ -1,4 +1,4 @@
-var tick = 1000;
+var tick = 5000;
 
 function slideShowStarter () {
 
