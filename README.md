@@ -2,18 +2,20 @@
 
 ## todo
 
- - optional clickable slides
- - optional slide description
- - slide preloader
- - slide controls (play - pause - next - back)
  - slide data from json (ajax)
+ - expose slide show api
 
 ## doing
 
- - slide transition
+ - slide preloader
 
 ## done
 
+ - document code
+ - slide controls (play - pause - next - back)
+ - slide transition
+ - optional slide description
+ - optional clickable slides
  - slide description
  - clickable slides
  - slide show base

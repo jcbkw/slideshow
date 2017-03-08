@@ -1,26 +1,212 @@
-var tick = 5000;
+var tick = 1000,
+    activeClass = 'active',
+    intervalId;
 
-function slideShowStarter () {
+/**
+ * Stops the iteration of a given setInterval interval id.
+ */    
+function slideShowStop () {
 
-    document.getElementById("slideShow").getElementsByClassName('img-wrapper')[0].classList.add('active');
+    clearInterval(intervalId);
+  
+}
+
+
+/**
+ * Resets the iteration of a new setInterval function and sets a new interval id.
+ */
+function slideShowPlay () {
+
+    slideShowStop();
+
+    intervalId = setInterval(slideShowNext, tick);
 
 }
-setInterval( function (){
 
-   var current = document.getElementById("slideShow").getElementsByClassName('active')[0];
-   current.classList.remove('active');
+/**
+ * Displays the slide within a given set of (hidden) slides.
+ * @param {string}  slide - HTMLElement representing a slide.
+ */ 
+function show (slide) {
 
-   if (current.nextElementSibling) { 
+    slide.classList.add(activeClass);
 
-     current.nextElementSibling.classList.add('active');
-   
-   }
-   else {
+}
 
-       slideShowStarter(); 
 
-   }
+/**
+ * Hides an active slide within a given set of slides.
+ * @param {string}  slide - HTMLElement representing a slide.
+ */ 
+function hide (slide) {
 
-}, tick);
+    slide.classList.remove(activeClass);
 
-document.addEventListener("DOMContentLoaded", slideShowStarter , false);
+}
+
+/**
+ * Displays the first slide within a given set of slides.
+ */ 
+function showFirstSlide () {
+
+    show(getFirstSlide());
+
+}
+
+
+/**
+ * Displays the last slide within a given set of slides.
+ */ 
+function showLastSlide () {
+
+    show(getLastSlide());
+
+}
+
+/**
+ * Displays the previous slide within a given set of slides.
+ * Uses helper function, slideShowMove
+ */ 
+function slideShowPrev () {
+
+    var current = getActiveSlide();
+
+    slideShowMove(current, current.previousElementSibling, showLastSlide);
+
+}
+
+/**
+ * Displays the previous slide within a given set of slides.
+ * Uses helper function, slideShowMove.
+ */ 
+function slideShowNext () {
+
+   var current = getActiveSlide();
+
+   slideShowMove(current, current.nextElementSibling, showFirstSlide);
+
+}
+
+/**
+ * Displays the next desired slide within a given set of slides.
+ * @param {string} fromSlide  - The slide that you want to hide and move away from.
+ * @param {string} toSlide - The slide that you want to display and shift towards.
+ * @param {function} fallbackFunction - A slideshow handler that will be called if fromSlide or toSlide are falsy. 
+ */ 
+function slideShowMove (fromSlide, toSlide, fallbackFunction) {
+
+    if (fromSlide) {
+
+        hide(fromSlide);
+
+    }
+
+    if (toSlide) {
+
+        show(toSlide);
+
+    }
+    else {
+
+        fallbackFunction(); 
+
+    }
+
+    slideShowPlay();
+
+}
+
+/**
+ * Returns the active slide a given set of slides.
+ * @returns {HTMLElement}
+ */
+function getActiveSlide () {
+
+    return document.getElementById("slideShow").getElementsByClassName(activeClass)[0];
+
+}
+
+/**
+ * Return first slide of the given slideshow.
+ * 
+ * @return {HTMLElement}
+ */
+function getFirstSlide () {
+
+    return getAllSlides()[0];
+
+}
+
+/**
+ * Return last slide of the given slideshow.
+ * 
+ * @return {HTMLElement}
+ */
+function getLastSlide () {
+
+    var slides      = getAllSlides();
+
+    return slides[slides.length - 1];
+
+}
+
+/**
+ * Collects all slides within a given slideshow.
+ * Uses event handler function slideControlsClickHandler.
+ * @returns{Array} slides - Collection of slides. 
+ */
+function getAllSlides () {
+slideControlsClickHandler();
+    return document.getElementById("slideShow").getElementsByClassName('slide');
+
+}
+
+/**
+ * Event handler that listens for clicks and decern click targets amoung the slideshow button controls.
+ * @param {Event} event 
+ */
+function slideControlsClickHandler (event) {
+
+    switch (event.target.id) {
+
+        case "play":
+
+            slideShowPlay();
+
+            break;
+
+        case "stop":
+        
+            slideShowStop();
+
+            break;
+        
+        case "prev":
+
+            slideShowPrev();
+        
+            break;
+        
+        case "next":
+            
+            slideShowNext();
+        
+            break;
+    }
+}
+
+/**
+ * SlideShow initializer
+ * Uses helper function showFirstSlide, slideShowPlay.
+ * Adds an an event listener to slideshow controls buttons.
+ */
+
+function slideShowInit () {
+
+    showFirstSlide();
+    slideShowPlay();
+    document.getElementsByClassName("slideshow-controls")[0].addEventListener("click", slideControlsClickHandler , false);
+    
+}
+
+document.addEventListener("DOMContentLoaded", slideShowInit, false);
