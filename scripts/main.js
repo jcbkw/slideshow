@@ -1,4 +1,4 @@
-var tick = 1000,
+var tick = 5000,
     activeClass = 'active',
     intervalId;
 
@@ -152,11 +152,10 @@ function getLastSlide () {
 
 /**
  * Collects all slides within a given slideshow.
- * Uses event handler function slideControlsClickHandler.
  * @returns{Array} slides - Collection of slides. 
  */
 function getAllSlides () {
-slideControlsClickHandler();
+
     return document.getElementById("slideShow").getElementsByClassName('slide');
 
 }
@@ -200,7 +199,6 @@ function slideControlsClickHandler (event) {
  * Uses helper function showFirstSlide, slideShowPlay.
  * Adds an an event listener to slideshow controls buttons.
  */
-
 function slideShowInit () {
 
     showFirstSlide();
