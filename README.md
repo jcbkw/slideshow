@@ -2,12 +2,12 @@
 
 ## todo
 
- - slide data from json (ajax)
  - expose slide show api
+ - slide preloader
 
 ## doing
 
- - slide preloader
+ - slide data from json (ajax)
 
 ## done
 

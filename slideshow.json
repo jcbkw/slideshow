@@ -1,0 +1,69 @@
+{
+    "parameters" : {
+        
+        "cssClass" : "slide",
+        "baseName" : "game-slide",
+        "defaultTarget" : "_self",
+        "btnClass" : "slide-ctrl",
+        "btnType" : "button",
+        "displayControls" : true
+
+    },
+
+    "buttons" : [
+
+        {
+
+            "text" : "Prev ◄◄",
+            "id" : "prev"
+        },
+
+        {
+
+            "text" : "Stop ◙",
+            "id" : "stop"
+        },
+
+        {
+
+            "text" : "Play ►",
+            "id" : "play"
+        },
+
+        {
+
+            "text" : "Next ►►",
+            "id" : "next"
+        }      
+    ],
+
+    "slides" : [
+       
+       {
+           "url" : "images/gallery/img-1.jpg",  
+           "link" : "http://www.playstation.com",
+           "text" : "Game Slide 1"
+       },
+
+       {
+            "url" : "images/gallery/img-2.jpg",  
+            "link" : "http://www.playstation.com",
+            "text" : "Game Slide 2",
+            "target" : "_blank"       
+       },
+
+       {
+           "url" : "images/gallery/img-3.jpg",  
+           "link" : "http://www.playstation.com",
+           "text" : "Game Slide 3"
+       },
+
+       {
+           "url" : "images/gallery/img-4.jpg",  
+           "link" : "http://www.playstation.com",
+           "text" : "Game Slide 4" 
+       }
+       
+    ]
+    
+}
