@@ -201,10 +201,25 @@ function slideControlsClickHandler (event) {
  */
 function slideShowInit () {
 
+    var controls = document.getElementsByClassName("slideshow-controls")[0];
+
     showFirstSlide();
     slideShowPlay();
-    document.getElementsByClassName("slideshow-controls")[0].addEventListener("click", slideControlsClickHandler , false);
+
+    if (controls) {
+
+        controls.addEventListener("click", slideControlsClickHandler , false);
+
+    }
     
 }
+/**
+ * Sets the event DOM content loaded event listener.
+ */
+function starter () {  
 
-document.addEventListener("DOMContentLoaded", slideShowInit, false);
+    document.addEventListener("DOMContentLoaded", initialize, false);
+
+ }
+
+ starter();
