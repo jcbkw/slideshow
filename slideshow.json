@@ -1,9 +1,6 @@
 {
     "parameters" : {
         
-        "cssClass" : "slide",
-        "baseName" : "game-slide",
-        "defaultTarget" : "_self",
         "btnClass" : "slide-ctrl",
         "btnType" : "button",
         "displayControls" : true

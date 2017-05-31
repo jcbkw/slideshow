@@ -1,4 +1,4 @@
-$(function () { //jQuery iife
+$(function () { //jQuery iife DOM content loaded
 
 
     var tick = 5000,
@@ -213,12 +213,14 @@ $(function () { //jQuery iife
         
     }
     /**
-     * Sets the event DOM content loaded event listener.
+     * Fetches slideshow data.
+     * Parsing/converting a json file into an object.
+     * Calls helper functions to structure the DOM and add event listeners.
      */
     function starter () {  
 
         $.get("slideshow.json", function (data) {
-
+            //console.log(data);
             render(data);
 
             slideShowInit();

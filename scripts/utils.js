@@ -1,15 +1,4 @@
 /**
- * Parsing/converting a json file into an object. 
- * TODO rename.
- */
-function parseData () {
-
-    render(JSON.parse(this.responseText));
-    slideShowInit();
-    
-}
-
-/**
  * Renders slides and optional slideshow controls
  * using renderSlides and renderControls helper functions.
  * @param {object} data 
@@ -32,46 +21,14 @@ function render (data) {
  */
 function renderSlides (data) {
 
-    var slideshow = document.createElement("div"),
-        slide,
-        divEl,
-        imgEl,
-        txtNd,  
-        aEl,
-        pEl,
-        i;
-
-    slideshow.setAttribute("id", "slideShow");    
-    slideshow.setAttribute("class", "slideshow");
-
-    for (i = 0; i < data.slides.length; i++ ) {
-
-        slide   = data.slides[i];
-
-        divEl   = document.createElement("div");
-        imgEl   = document.createElement("img");
-        aEl     = document.createElement("a");
-        pEl     = document.createElement("p");
-                
-        txtNd   = document.createTextNode(slide.text);
+    $.get('templates/slideshow.html', function(template) {
         
-        divEl.setAttribute("class", data.parameters.cssClass);
-        aEl.setAttribute("href", slide.link);
-        aEl.setAttribute("target", slide.target || data.parameters.defaultTarget);
-        imgEl.setAttribute("src", slide.url);
-        imgEl.setAttribute("alt", data.parameters.baseName + (i+1));
+       var slideshow = Handlebars.compile(template);
+       console.log(template);
+        $("body").append(slideshow(data));
 
-        pEl.appendChild(txtNd);        
-        aEl.appendChild(imgEl);
-        aEl.appendChild(pEl);
-        divEl.appendChild(aEl);
-        
-        slideshow.appendChild(divEl);
+    });
 
-    }
-
-
-    document.body.appendChild(slideshow);
 }
 
 /**
@@ -121,21 +78,4 @@ function request (url, callback) {
     xhr.send();
 
 }
-
-/**
- * Fetches slideshow data. 
- * Uses request helper function.
- */
-function initialize () {
-
-    request("slideshow.json", parseData);
-
-}
-
-
-
-
-
-
-
 
