@@ -1,8 +1,6 @@
 {
     "parameters" : {
         
-        "btnClass" : "slide-ctrl",
-        "btnType" : "button",
         "displayControls" : true
 
     },

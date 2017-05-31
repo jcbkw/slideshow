@@ -149,7 +149,7 @@ $(function () { //jQuery iife DOM content loaded
      */
     function getLastSlide () {
 
-        var $slides      = getAllSlides();
+        var $slides = getAllSlides();
 
         return $slides[$slides.length - 1];
 
@@ -170,7 +170,7 @@ $(function () { //jQuery iife DOM content loaded
      * @param {Event} event 
      */
     function slideControlsClickHandler (event) {
-
+        console.log(event.target.id);
         switch (event.target.id) {
 
             case "play":
@@ -205,8 +205,7 @@ $(function () { //jQuery iife DOM content loaded
      * Adds an an event listener to slideshow controls buttons.
      */
     function slideShowInit () {
-
-        $("slideshow-controls").on("click", slideControlsClickHandler);
+        $(".slideshow-controls").on('click', slideControlsClickHandler);
 
         showFirstSlide();
         slideShowPlay();
@@ -221,14 +220,11 @@ $(function () { //jQuery iife DOM content loaded
 
         $.get("slideshow.json", function (data) {
             //console.log(data);
-            render(data);
-
-            slideShowInit();
-
+            render(data, slideShowInit);
         })
 
     }
 
     starter();
 
-}());
+});
