@@ -1,4 +1,6 @@
 {
+    "title" : "The A+ Game Slideshow",
+
     "parameters" : {
         
         "displayControls" : true
@@ -10,25 +12,29 @@
         {
 
             "text" : "Prev ◄◄",
-            "id" : "prev"
+            "id" : "prev",
+            "type": "default"
         },
 
         {
 
             "text" : "Stop ◙",
-            "id" : "stop"
+            "id" : "stop",
+            "type": "danger"
         },
 
         {
 
             "text" : "Play ►",
-            "id" : "play"
+            "id" : "play",
+            "type": "success"
         },
 
         {
 
             "text" : "Next ►►",
-            "id" : "next"
+            "id" : "next",
+            "type": "default"
         }      
     ],
 
@@ -37,26 +43,38 @@
        {
            "url" : "images/gallery/img-1.jpg",  
            "link" : "http://www.playstation.com",
-           "text" : "Game Slide 1"
+           "text" : "Game Slide 1",
+           "slideName": "The New Frontier",
+           "description": "Fusce vehicula nulla massa, a facilisis mi pretium quis. Quisque vel pretium nulla. Mauris auctor auctor quam, accumsan gravida ex suscipit accumsan. Curabitur luctus augue a dolor rhoncus, nec accumsan metus sollicitudin. Nulla facilisi. Etiam a augue vel elit tincidunt mattis. Donec vitae luctus turpis.Donec semper vel magna quis suscipit. In hac habitasse platea dictumst. Morbi aliquam molestie nibh sed rhoncus. Nunc ac condimentum ipsum, ut consequat erat.",
+           "description2": "Nunc cursus pretium nunc, ut venenatis diam mollis a. Morbi eget porta nisl, nec ullamcorper enim. Fusce lacinia ut nisl non vulputate. Integer tristique eleifend finibus. Praesent sollicitudin odio at scelerisque condimentum. Mauris velit elit, rhoncus sit amet interdum ac, ultrices vel lacus. Donec semper vel magna quis suscipit. In hac habitasse platea dictumst. Morbi aliquam molestie nibh sed rhoncus. Nunc ac condimentum ipsum, ut consequat erat. Curabitur tincidunt ac neque at varius. Vivamus malesuada pellentesque ipsum."
        },
 
        {
             "url" : "images/gallery/img-2.jpg",  
             "link" : "http://www.playstation.com",
             "text" : "Game Slide 2",
-            "target" : "_blank"       
+            "slideName": "Stealth",
+            "target" : "_blank",       
+           "description": "Fusce vehicula nulla massa, a facilisis mi pretium quis. Quisque vel pretium nulla. Mauris auctor auctor quam, accumsan gravida ex suscipit accumsan. Curabitur luctus augue a dolor rhoncus, nec accumsan metus sollicitudin. Nulla facilisi. Etiam a augue vel elit tincidunt mattis. Donec vitae luctus turpis.Donec semper vel magna quis suscipit. In hac habitasse platea dictumst. Morbi aliquam molestie nibh sed rhoncus. Nunc ac condimentum ipsum, ut consequat erat.",
+           "description2": "Nunc cursus pretium nunc, ut venenatis diam mollis a. Morbi eget porta nisl, nec ullamcorper enim. Fusce lacinia ut nisl non vulputate. Integer tristique eleifend finibus. Praesent sollicitudin odio at scelerisque condimentum. Mauris velit elit, rhoncus sit amet interdum ac, ultrices vel lacus. Donec semper vel magna quis suscipit. In hac habitasse platea dictumst. Morbi aliquam molestie nibh sed rhoncus. Nunc ac condimentum ipsum, ut consequat erat. Curabitur tincidunt ac neque at varius. Vivamus malesuada pellentesque ipsum."
        },
 
        {
            "url" : "images/gallery/img-3.jpg",  
            "link" : "http://www.playstation.com",
-           "text" : "Game Slide 3"
+           "text" : "Game Slide 3",
+           "slideName": "An Agreement",
+           "description": "Fusce vehicula nulla massa, a facilisis mi pretium quis. Quisque vel pretium nulla. Mauris auctor auctor quam, accumsan gravida ex suscipit accumsan. Curabitur luctus augue a dolor rhoncus, nec accumsan metus sollicitudin. Nulla facilisi. Etiam a augue vel elit tincidunt mattis. Donec vitae luctus turpis.Donec semper vel magna quis suscipit. In hac habitasse platea dictumst. Morbi aliquam molestie nibh sed rhoncus. Nunc ac condimentum ipsum, ut consequat erat.",
+           "description2": "Nunc cursus pretium nunc, ut venenatis diam mollis a. Morbi eget porta nisl, nec ullamcorper enim. Fusce lacinia ut nisl non vulputate. Integer tristique eleifend finibus. Praesent sollicitudin odio at scelerisque condimentum. Mauris velit elit, rhoncus sit amet interdum ac, ultrices vel lacus. Donec semper vel magna quis suscipit. In hac habitasse platea dictumst. Morbi aliquam molestie nibh sed rhoncus. Nunc ac condimentum ipsum, ut consequat erat. Curabitur tincidunt ac neque at varius. Vivamus malesuada pellentesque ipsum."
        },
 
        {
            "url" : "images/gallery/img-4.jpg",  
            "link" : "http://www.playstation.com",
-           "text" : "Game Slide 4" 
+           "text" : "Game Slide 4",
+           "slideName": "Discovery", 
+           "description": "Fusce vehicula nulla massa, a facilisis mi pretium quis. Quisque vel pretium nulla. Mauris auctor auctor quam, accumsan gravida ex suscipit accumsan. Curabitur luctus augue a dolor rhoncus, nec accumsan metus sollicitudin. Nulla facilisi. Etiam a augue vel elit tincidunt mattis. Donec vitae luctus turpis.Donec semper vel magna quis suscipit. In hac habitasse platea dictumst. Morbi aliquam molestie nibh sed rhoncus. Nunc ac condimentum ipsum, ut consequat erat.",
+           "description2": "Nunc cursus pretium nunc, ut venenatis diam mollis a. Morbi eget porta nisl, nec ullamcorper enim. Fusce lacinia ut nisl non vulputate. Integer tristique eleifend finibus. Praesent sollicitudin odio at scelerisque condimentum. Mauris velit elit, rhoncus sit amet interdum ac, ultrices vel lacus. Donec semper vel magna quis suscipit. In hac habitasse platea dictumst. Morbi aliquam molestie nibh sed rhoncus. Nunc ac condimentum ipsum, ut consequat erat. Curabitur tincidunt ac neque at varius. Vivamus malesuada pellentesque ipsum."
        }
        
     ]

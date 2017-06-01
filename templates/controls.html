@@ -1,7 +1,15 @@
-<div class="slideshow-controls">
-    {{#each buttons}}    
-        <button id={{id}} class="slide-ctrl" type="button">
-            {{text}}
-        </button>
-    {{/each}}
-</div>
+<section class="controls container">
+    <div class="row">
+       <div class="col col-md-3 empty"></div>
+        <div class="col col-md-6 controls">
+            <div class="slideshow-controls">
+                {{#each buttons}}    
+                    <button id={{id}} class="slide-ctrl btn btn-{{type}} btn-lg" type="button">
+                        {{text}}
+                    </button>
+                {{/each}}
+            </div>
+        </div>
+       <div class="col col-md-3 empty"></div> 
+    </div>
+</section>

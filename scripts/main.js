@@ -150,8 +150,8 @@ $(function () { //jQuery iife DOM content loaded
     function getLastSlide () {
 
         var $slides = getAllSlides();
-
-        return $slides[$slides.length - 1];
+ //console.log($slides);
+        return $slides.last();
 
     }
 
@@ -170,7 +170,6 @@ $(function () { //jQuery iife DOM content loaded
      * @param {Event} event 
      */
     function slideControlsClickHandler (event) {
-        console.log(event.target.id);
         switch (event.target.id) {
 
             case "play":
@@ -187,6 +186,7 @@ $(function () { //jQuery iife DOM content loaded
             
             case "prev":
 
+                console.log(event.target.id);
                 slideShowPrev();
             
                 break;

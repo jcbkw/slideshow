@@ -1,10 +1,30 @@
-<div id="slideShow" class="slideshow">
-{{#each slides}}    
-    <div class="slide">
-        <a href={{link}} target= "_blank">
-            <img src={{url}} alt="game-slide{{@index}}">
-            <p>{{text}}</p>
-        </a>
+<section class="slideshow-wrapper ">
+    <h1 class="title secondary-text-color text-center">{{title}}</h1>
+    <div id="slideShow" class="slideshow box-shadow">
+    {{#each slides}}    
+        <div class="slide slide{{@index}}">
+            <a href={{link}} target= "_blank">
+                <img src={{url}} alt="game-slide{{@index}}">
+                <p>{{text}}</p>
+            </a>
+        </div>
+    {{/each}}
     </div>
-{{/each}}
-</div>
+</section>
+<!--TO DO ADD DYNAMIC CONTENT
+    <section class="slide-description container">
+    <div class="row"> 
+        <div class="col-md-12">  
+            <h3>{{slideName}}</h3> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <p>{{description}}</p>
+        </div>
+        <div class="col-md-6">
+            <p>{{description2}}</p>
+        </div>  
+    </div>
+</section>-->
+
