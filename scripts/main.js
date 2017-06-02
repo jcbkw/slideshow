@@ -31,7 +31,11 @@ $(function () { //jQuery iife DOM content loaded
      */ 
     function show ($slide) {
 
+        showSlideOffsets($slide, true);
+        showSlideDescriptions($slide, true);
         $slide.addClass(activeClass);
+        
+        
 
     }
 
@@ -42,7 +46,11 @@ $(function () { //jQuery iife DOM content loaded
      */ 
     function hide ($slide) {
 
+        
+        showSlideOffsets($slide, false);
+        showSlideDescriptions($slide, false);
         $slide.removeClass(activeClass);
+
 
     }
 
@@ -50,9 +58,10 @@ $(function () { //jQuery iife DOM content loaded
      * Displays the first slide within a given set of slides.
      */ 
     function showFirstSlide () {
-
+               
         show(getFirstSlide());
-
+        
+       
     }
 
 
@@ -96,7 +105,8 @@ $(function () { //jQuery iife DOM content loaded
      * @param {function} fallbackFunction - A slideshow handler that will be called if fromSlide or toSlide length values are falsy. 
      */ 
     function slideShowMove ($fromSlide, $toSlide, fallbackFunction) {
-        
+    
+
         if ($fromSlide.length){
             
             hide($fromSlide);
@@ -104,7 +114,7 @@ $(function () { //jQuery iife DOM content loaded
         }
         
         if ($toSlide.length) {
-
+            
 
             show($toSlide);
 
@@ -112,7 +122,7 @@ $(function () { //jQuery iife DOM content loaded
 
 
         else {
-            //console.log(fromSlide.next());
+
             fallbackFunction(); 
 
         }
@@ -137,11 +147,62 @@ $(function () { //jQuery iife DOM content loaded
      * @return {HTMLElement}
      */
     function getFirstSlide () {
-        //console.log(getAllSlides().get(0));
-        return getAllSlides().first();
+        
+        return getSlides().first();
+        
 
     }
 
+        
+    function showSlideDescriptions($slide, boolean) {
+
+        var index = $slide.attr("data");
+        var $slideDesc = $(".row[data="+ index +"]");
+
+        if (boolean) {
+
+            $slideDesc.addClass("active");
+
+        }
+
+        else {
+
+            $slideDesc.removeClass("active");
+
+        }
+
+    }
+
+    function showSlideOffsets($slide, boolean) {
+
+        var index = Number($slide.attr("data"));
+        var maxIndex = Number($slide.parent().children().length - 1);
+        var $firstSlide = $slide.parent().children().first();
+        var $lastSlide = $slide.parent().children().last();
+        var $prev = $slide.prev(".slide");
+        var $next = $slide.next(".slide");
+
+        if (index === maxIndex) {
+
+            $next = $firstSlide;
+            
+        }
+
+        if (index === 0) {
+
+            $prev = $lastSlide;
+
+        }
+
+        boolean ? $prev.addClass("offset-left"):
+                    $prev.removeClass("offset-left");
+
+        boolean ? $next.addClass("offset-right"):
+                    $next.removeClass("offset-right");
+
+    }
+
+        
     /**
      * Return last slide of the given slideshow.
      * 
@@ -149,8 +210,7 @@ $(function () { //jQuery iife DOM content loaded
      */
     function getLastSlide () {
 
-        var $slides = getAllSlides();
- //console.log($slides);
+        var $slides = getSlides();
         return $slides.last();
 
     }
@@ -159,11 +219,12 @@ $(function () { //jQuery iife DOM content loaded
      * Collects all slides within a given slideshow.
      * @returns{Array} slides - Collection of slides. 
      */
-    function getAllSlides () {
+    function getSlides () {
 
-        return $("#slideShow .slide");
+       return $("#slideShow .slide");
 
     }
+
 
     /**
      * Event handler that listens for clicks and decern click targets amoung the slideshow button controls.
@@ -186,7 +247,6 @@ $(function () { //jQuery iife DOM content loaded
             
             case "prev":
 
-                console.log(event.target.id);
                 slideShowPrev();
             
                 break;
@@ -219,8 +279,9 @@ $(function () { //jQuery iife DOM content loaded
     function starter () {  
 
         $.get("slideshow.json", function (data) {
-            //console.log(data);
+
             render(data, slideShowInit);
+
         })
 
     }

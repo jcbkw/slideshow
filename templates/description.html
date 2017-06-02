@@ -1,0 +1,19 @@
+<section class="slide-description container">
+   <div id="descriptions"> 
+    {{#each slides}}
+        <div class="row row-title{{@index}}" data="{{@index}}"> 
+            <div class="col-md-12">  
+                <h3>{{slideName}}</h3> 
+            </div>
+        </div>
+        <div class="row row-description{{@index}}" data="{{@index}}">
+            <div class="col-md-6">
+                <p>{{description}}</p>
+            </div>
+            <div class="col-md-6">
+                <p>{{description2}}</p>
+            </div>   
+        </div>
+    {{/each}}
+  </div>  
+</section>

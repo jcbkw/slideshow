@@ -7,20 +7,23 @@ function render (data, callback) {
 
     renderSlides(data, function () {
 
-        if (data.parameters.displayControls) {
+        renderDescription(data, function () {
 
-            renderControls(data, callback);
+            if (data.parameters.displayControls) {
 
-        }
-        else {
+                renderControls(data, callback);
 
-            callback();
+            }
+            else {
 
-        }
+                callback();
+
+            }
+
+        });
 
     });
 
-    
 }
 
 /**
@@ -48,11 +51,22 @@ function renderSlides (data, callback) {
 function renderControls (data, callback) {
               
     $.get('templates/controls.html', function (buttons) {
-        var buttons = Handlebars.compile(buttons);
-        console.log(buttons(data));
+        var controls = Handlebars.compile(buttons);
         
-        $("body").append(buttons(data));
+        $("body").append(controls(data));
         callback();
     });    
+
+}
+
+function renderDescription (data, callback) {
+
+    $.get('templates/description.html', function (description) {
+      var content = Handlebars.compile(description);
+      $("body").append(content(data));
+
+      callback();
+
+    });
 
 }
