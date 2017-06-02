@@ -183,13 +183,13 @@ $(function () { //jQuery iife DOM content loaded
         var $next = $slide.next(".slide");
 
         if (index === maxIndex) {
-
+            
             $next = $firstSlide;
             
         }
 
         if (index === 0) {
-
+            
             $prev = $lastSlide;
 
         }
