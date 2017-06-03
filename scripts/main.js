@@ -152,7 +152,11 @@ $(function () { //jQuery iife DOM content loaded
         
 
     }
-
+   /** This function appends slideshow description content to the DOM.
+    * 
+    * @param {object} slide Jquery object representing a slide. 
+    * @param {boolean} boolean to show or hide slide description. 
+    */
         
     function showSlideDescriptions($slide, boolean) {
 
@@ -176,10 +180,13 @@ $(function () { //jQuery iife DOM content loaded
 
              });
         }
-
-        
-
     }
+
+    /**This function displays slideshow in an carousel fashion.
+     * 
+     * @param {object} slide Jquery object representing a slide.  
+     * @param {boolean} boolean to offset preceeding and subsequent slide. 
+     */
 
     function showSlideOffsets($slide, boolean) {
 

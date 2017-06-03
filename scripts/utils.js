@@ -1,7 +1,8 @@
 /**
  * Renders slides and optional slideshow controls
  * using renderSlides and renderControls helper functions.
- * @param {object} data 
+ * @param {object} data
+ * @param {function} callback
  */
 function render (data, callback) {
 
@@ -28,7 +29,8 @@ function render (data, callback) {
 
 /**
  * Using HTML to render a slideshow served from a json file.
- * @param {HTMLElement} data 
+ * @param {object} data
+ * @param {function} callback
  */
 function renderSlides (data, callback) {
 
@@ -45,8 +47,9 @@ function renderSlides (data, callback) {
 }
 
 /**
- * Using HTML to render slideshow controls served from a json file.
+ * Using HTML to render slideshow controls contained in an HTML template.
  * @param {object} data 
+ * @param {function} callback
  */
 function renderControls (data, callback) {
               
@@ -58,6 +61,12 @@ function renderControls (data, callback) {
     });    
 
 }
+
+/**  Using HTML to render slideshow descriptions an HTML template.
+ * 
+ * @param {object} data 
+ * @param {function} callback 
+ */
 
 function renderDescription (data, callback) {
 
