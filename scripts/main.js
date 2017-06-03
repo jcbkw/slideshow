@@ -159,17 +159,25 @@ $(function () { //jQuery iife DOM content loaded
         var index = $slide.attr("data");
         var $slideDesc = $(".row[data="+ index +"]");
 
+        //$slideDesc.slideToggle(400);
+
         if (boolean) {
 
-            $slideDesc.addClass("active");
+                $slideDesc.fadeIn("300", function (){
+                $slideDesc.addClass("active");
 
+             });
         }
 
         else {
 
-            $slideDesc.removeClass("active");
+             $slideDesc.fadeOut("300", function (){
+                $slideDesc.removeClass("active");
 
+             });
         }
+
+        
 
     }
 
